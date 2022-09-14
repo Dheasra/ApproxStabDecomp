@@ -23,7 +23,7 @@ h = 0.5
 L = Int8(1)
 
 #Number of steps in the optimisation process
-Nsteps = UInt64(200)
+Nsteps = UInt64(20)
 
 
 #---------------Metropolis-Hastings--------------------
@@ -53,7 +53,7 @@ TinList = logrange(1e-5, 1e-2, Nmc)
 TfinList = logrange(1e-8, 1e-4, Nmc)
 
 #initialise the method, every decomposition is initialised to the HF state by default
-Ptp = ParTemp(N, R, L, J, h, Nmc, Nsteps, TinList, TfinList)
+Ptp = ParTemp(N, R, L, J, h, Int8(Nmc), Nsteps, TinList, TfinList)
 
 #run the algorithm
 Energies = run(Ptp)
